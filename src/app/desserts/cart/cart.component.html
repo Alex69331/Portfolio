@@ -1,0 +1,44 @@
+<div class="cart-container">
+  <h1>Your Cart({{ totalQuantity }})</h1>
+  <div *ngIf="cart.length === 0">
+    <img
+      class="cartImg"
+      src="assets/images/illustration-empty-cart.svg"
+      alt="Empty cart"
+    />
+    <p>Your added items will appear here</p>
+  </div>
+  <div *ngIf="cart.length > 0">
+    <ul>
+      <li *ngFor="let item of cart">
+        <div class="cart-item">
+          <div class="item-details">
+            <span class="item-title">{{ item.subtitle }}</span>
+            <div class="item-info">
+              <span class="item-quantity">{{ item.quantity }}x </span>
+              <span class="item-price">&#64; {{ item.price }}</span>
+              <span class="item-total">{{
+                calculateItemTotal(item) | currency
+              }}</span>
+            </div>
+          </div>
+          <button class="remove-button" (click)="removeItem(item)">
+            <img
+              src="/assets/images/icon-remove-item.svg"
+              alt="remove-button"
+            />
+          </button>
+        </div>
+      </li>
+    </ul>
+    <div class="order-total">
+      <span class="orderTotal">Order Total</span>
+      <span class="total-price">{{ orderTotal | currency }}</span>
+    </div>
+    <div class="carbonDiv">
+      <img src="/assets/images/icon-carbon-neutral.svg" alt="" />
+      <h3>This is a <b> carbon-neutral </b> delivery</h3>
+    </div>
+    <button class="confirmBtn" (click)="confirmOrder()">Confirm Order</button>
+  </div>
+</div>

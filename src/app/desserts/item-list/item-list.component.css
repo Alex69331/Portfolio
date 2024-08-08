@@ -1,0 +1,130 @@
+body,
+.ui.container,
+.ui.grid {
+  font-family: "Red Hat Text", sans-serif;
+}
+.fpage {
+  margin-left: 5rem;
+  margin-top: 5rem;
+  padding-bottom: 5rem;
+}
+.ui.container {
+  display: flex;
+  flex-direction: row;
+}
+h1 {
+  font-family: "Red Hat Text", sans-serif;
+  font-weight: 700;
+  text-align: left;
+}
+img {
+  border-radius: 15px;
+  width: 100%;
+  box-shadow: 20px;
+}
+.item-container {
+  background-color: hsl(20, 50%, 98%);
+  position: relative;
+  margin: 0;
+  border: none;
+  box-shadow: none;
+}
+.add-to-cart-button {
+  font-family: "Red Hat Text", sans-serif;
+  position: relative;
+  text-align: center;
+  border: 0.5px solid black;
+  text-wrap: nowrap;
+  left: 50%;
+  bottom: 55%;
+  transform: translate(-50%, -55%);
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10px;
+  width: 150px;
+  padding: 20px 0;
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s;
+  transition: 0.3s;
+}
+.add-to-cart-button:hover {
+  color: hsl(14, 86%, 42%);
+  border: 0.5px solid hsl(14, 86%, 36%);
+}
+.quantity-text {
+  color: white;
+}
+.add-to-cart-button.selected {
+  background-color: hsl(14, 86%, 42%) !important;
+}
+.cartIcon {
+  width: 17px;
+  margin-right: 5px;
+  padding-top: 1px;
+}
+.add-to-cart-button:hover {
+  background-color: white;
+}
+.description h2 {
+  font-weight: 700;
+  font-size: 14px;
+}
+.header p {
+  font-family: "Red Hat Text", sans-serif;
+  color: hsl(14, 25%, 72%);
+  font-weight: 400;
+}
+.price {
+  padding-top: 4px;
+  color: hsl(14, 65%, 62%);
+  font-weight: 700;
+}
+
+.column {
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box;
+  width: 80%;
+}
+.quantityBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.quantity-button {
+  margin: 5px;
+  border: none;
+  background-color: transparent;
+}
+.decrementBtn {
+  float: left;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+.incrementBtn {
+  float: right;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+@media (max-width: 768px) {
+  .ui.three.column.grid .column {
+    flex: 1 1 100%;
+  }
+  .selected-border {
+    border: 2px solid hsl(14, 86%, 42%);
+  }
+}
+@media (min-width: 768px) and (max-width: 1250px) {
+  .ui.three.column.grid .column {
+    flex: 0 1 40%;
+  }
+}

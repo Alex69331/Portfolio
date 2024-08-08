@@ -1,0 +1,18 @@
+<div class="desserts-page">
+  <app-item-list
+    [items]="items"
+    (addToCart)="addToCart($event)"
+    (updateCart)="updateCart($event)"
+  ></app-item-list>
+  <app-cart
+    [cart]="cart"
+    (cardChanged)="handleCartChange($event)"
+    (openModal)="openModal()"
+  ></app-cart>
+  <app-modal
+    *ngIf="isModalOpen"
+    [cart]="cart"
+    (closeModal)="closeModal()"
+    (clearCart)="clearCart()"
+  ></app-modal>
+</div>

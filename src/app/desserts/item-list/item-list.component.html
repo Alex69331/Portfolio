@@ -1,0 +1,66 @@
+<!-- app.component.html -->
+<div class="fpage">
+  <h1>Desserts</h1>
+  <div class="ui container">
+    <div class="ui three column grid">
+      <div class="column" *ngFor="let item of items">
+        <div class="ui segment item-container">
+          <div class="image">
+            <img
+              [ngClass]="{ 'selected-border': isSelected(item) }"
+              [src]="item.image"
+              alt="{{ item.title }}"
+            />
+          </div>
+          <button
+            class="ui button add-to-cart-button"
+            [class.selected]="isSelected(item)"
+            (click)="onAddToCart(item)"
+          >
+            <img
+              *ngIf="!isSelected(item)"
+              class="cartIcon"
+              src="/assets/images/icon-add-to-cart.svg"
+              alt=""
+            />
+            <span *ngIf="!isSelected(item)">Add to cart</span>
+            <span class="quantityBtn" *ngIf="isSelected(item)">
+              <button
+                class="quantity-button"
+                (click)="decreaseQuantity(item, $event)"
+              >
+                <img
+                  class="decrementBtn"
+                  src="/assets/images/icon-decrement-quantity.svg"
+                  alt="Decrease quantity"
+                />
+              </button>
+              <span class="quantity-text">{{ item.quantity }}</span>
+              <button
+                class="quantity-button"
+                (click)="increaseQuantity(item, $event)"
+              >
+                <img
+                  class="incrementBtn"
+                  src="/assets/images/icon-increment-quantity.svg"
+                  alt="Increase quantity"
+                />
+              </button>
+            </span>
+          </button>
+          <div class="content">
+            <div class="header">
+              <p>{{ item.title }}</p>
+            </div>
+            <div class="description">
+              <h2>{{ item.subtitle }}</h2>
+            </div>
+            <div class="price">
+              {{ item.price }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

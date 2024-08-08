@@ -1,0 +1,15 @@
+.desserts-page {
+  display: flex;
+  background: hsl(20, 50%, 98%);
+}
+.ui.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .desserts-page {
+    display: flex;
+    flex-direction: column;
+  }
+}

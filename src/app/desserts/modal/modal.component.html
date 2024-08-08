@@ -1,0 +1,32 @@
+<div class="modal-backdrop" (click)="onClose()">
+  <div class="modal">
+    <img src="/assets/images/icon-order-confirmed.svg" alt="" />
+    <h1 class="modalTitle">Order Confirmed</h1>
+    <p>We hope you enjoy your food!</p>
+    <div class="order-details">
+      <ul>
+        <li *ngFor="let item of cart">
+          <div class="cart-item">
+            <img [src]="item.image" alt="{{ item.title }}" class="item-image" />
+            <div class="item-details">
+              <span class="item-title">{{ item.subtitle }}</span>
+              <div id="item-details">
+                <span class="item-quantity">{{ item.quantity }}x </span>
+                <span class="item-price"> &#64; {{ item.price }} </span>
+
+                <span class="item-total">{{
+                  calculateItemTotal(item) | currency
+                }}</span>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="order-total">
+        <span class="orderTitle">Order Total</span>
+        <span class="total-price">{{ getTotal() | currency }}</span>
+      </div>
+      <button class="confirmBtn" (click)="onClose()">Start New Order</button>
+    </div>
+  </div>
+</div>
